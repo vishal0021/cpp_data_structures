@@ -2,6 +2,8 @@
 
 using namespace std;
 
+//node is a built in datatype
+//that is why we need to create Node named pointer
 class Node
 {
     public:
@@ -20,6 +22,20 @@ void printList(Node*n)
 
 }
 
+void findvalue(Node*n, int x)
+{
+   while(n!=NULL)
+   {
+       if (n->value == x)
+       {
+           cout<<"found the element at: "<<n<<endl;
+           cout<<"element value is: "<<n->value<<endl;
+       }
+       n = n->Next;
+   }
+
+}
+
 int main()
 {
     cout<<"linked_list"<<endl;
@@ -27,6 +43,10 @@ int main()
 
     Node* second = new Node();
     Node* third = new Node();
+    cout<<"head address: "<<head<<endl;
+    cout<<"second address: "<<second<<endl;
+    cout<<"third address: "<<third<<endl;
+
 
     head->value = 1;
     head->Next = second;
@@ -36,6 +56,7 @@ int main()
     third->Next = NULL;
     
     printList(head);
+    findvalue(head,2);
 
 
     return 0;
